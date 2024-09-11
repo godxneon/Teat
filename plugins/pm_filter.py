@@ -899,6 +899,7 @@ async def auto_filter(client, msg, spoll=False):
       #  await msg.message.delete()
 
 async def advantage_spell_chok(msg):
+    message = msg
     mv_rqst = msg.text
     search = msg.text.replace(" ", "+")
     btn = [[
