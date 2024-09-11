@@ -909,7 +909,7 @@ async def advantage_spell_chok(msg):
         )
             
     ]]
-    await message.reply_text(spl, reply_markup=InlineKeyboardMarkup(btn))
+    await msg.reply_text(spl, reply_markup=InlineKeyboardMarkup(btn))
     #await msg.delete()
     return   
 
