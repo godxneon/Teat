@@ -907,7 +907,7 @@ async def advantage_spell_chok(msg):
         )
             
     ]]
-    await query.message.reply_text(
+    await msg.reply_text(
           script.SPLING_MSG.format(query.from_user.mention),
           reply_markup=InlineKeyboardMarkup(btn)
     )   
