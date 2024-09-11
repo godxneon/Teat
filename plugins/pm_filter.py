@@ -26,13 +26,6 @@ logger.setLevel(logging.ERROR)
 
 BUTTONS = {}
 SPELL_CHECK = {}
-
-
-NON_IMG = """<b>❝ 𝖧𝖾𝗒 {msg.from_user.mention} 𝗌𝗈𝗆𝖾𝗍𝗁𝗂𝗇𝗀 𝖨𝗌 𝖶𝗋𝗈𝗇𝗀 ❞
-
-➪ 𝖢𝗈𝗋𝗋𝖾𝖼𝗍 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝖮𝖿 𝖬𝗈𝗏𝗂𝖾 𝖢𝗁𝖾𝖼𝗄 𝖢𝗈𝗋𝗋𝖾𝖼𝗍 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 (𝗀𝗈𝗈𝗀𝗅𝖾) 𝖡𝗎𝗍𝗍𝗈𝗇 𝖡𝖾𝗅𝗈𝗐 𝖶𝗂𝗅𝗅 𝖧𝖾𝗅𝗉 𝖸𝗈𝗎..𓁉
-
-➪ 𝖲𝖾𝗅𝖾𝖼𝗍 𝖸𝗈𝗎𝗋 𝖫𝖺𝗇𝗀𝖺𝗎𝗀𝖾 𝖥𝗋𝗈𝗆 𝖳𝗁𝖾 𝖫𝗂𝗌𝗍 𝖡𝖾𝗅𝗈𝗐 𝖳𝗈 𝖬𝗈𝗋𝖾 𝖧𝖾𝗅𝗉..☃︎</b>"""
             
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
