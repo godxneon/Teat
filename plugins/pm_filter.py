@@ -469,7 +469,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("𝑮𝒍𝒐𝒃𝒂𝒍 𝑭𝒊𝒍𝒕𝒆𝒓𝒔 𝒊𝒔 𝑪𝒖𝒓𝒓𝒆𝒏𝒕𝒍𝒚 𝑫𝒊𝒔𝒂𝒃𝒍𝒆𝒅..!!", show_alert=True)
 
     elif query.data == "mstd":
-        await query.answer(script.RULES_TXT, show_alert=True)
+        await query.answer(script.MUST_TXT, show_alert=True)
         
     elif query.data == "pages":
         await query.answer()
@@ -668,7 +668,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         ) 
-    elif query.data == "Rules":
+    elif query.data == "rules":
         buttons = [[
             InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
@@ -902,7 +902,7 @@ async def advantage_spell_chok(msg):
     search = msg.text.replace(" ", "+")      
     btn = [[
         InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
-        InlineKeyboardButton('Rules', 'rules'),
+        InlineKeyboardButton('Rules', callback_data='rules'),
         InlineKeyboardButton(
             text="📢 Search in Google 📢",
             url=f"https://google.com/search?q={search}"
