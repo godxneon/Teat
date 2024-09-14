@@ -888,6 +888,7 @@ async def advantage_spell_chok(msg):
     search = msg.text.replace(" ", "+")      
     btn = [[
         InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
+        InlineKeyboardButton(text=script.MOVDOW_TXT),
         InlineKeyboardButton(
             text="📢 Search in Google 📢",
             url=f"https://google.com/search?q={search}"
