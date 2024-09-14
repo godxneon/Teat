@@ -673,7 +673,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
         ]]
-        await client.edit_message_media(
+        await client.edit_message(
             query.message.chat.id, 
             query.message.id,             
         )
