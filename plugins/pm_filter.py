@@ -127,7 +127,6 @@ async def next_page(bot, query):
     except MessageNotModified:
         pass
     await query.answer()
-    temp.SEND_ALL_TEMP[key] = files
 
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
@@ -470,24 +469,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("𝑮𝒍𝒐𝒃𝒂𝒍 𝑭𝒊𝒍𝒕𝒆𝒓𝒔 𝒊𝒔 𝑪𝒖𝒓𝒓𝒆𝒏𝒕𝒍𝒚 𝑫𝒊𝒔𝒂𝒃𝒍𝒆𝒅..!!", show_alert=True)
 
     elif query.data == "mstd":
-        await query.answer("കിട്ടോ.. ഉണ്ടോ.. തരുമോ.അയക്കാമോ. sent. ലിങ്ക്.. Plz. Movie... എന്നിങ്ങനെ ഉള്ള വാക്കുകൾ ഒഴിവാക്കുക. മൂവിയുടെ പേര് വർഷം ഭാഷ. വേറേ ഒന്നും കൂട്ടി എഴുതരുത്.🔍", show_alert=True)
-
-
-    elif query.data.startswith("send_fall"):
-        temp_var, userid = query.data.split("#")
-        if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
-            return await query.answer("𝑻𝒉𝒊𝒔 𝒊𝒔 𝒏𝒐𝒕 𝒀𝒐𝒖𝒓 𝑹𝒆𝒒𝒖𝒆𝒔𝒕🚫\n\n𝑫𝒐 𝑺𝒆𝒂𝒓𝒄𝒉 𝒚𝒐𝒖𝒓 𝒐𝒘𝒏 ✅", show_alert=True)
-        files = temp.SEND_ALL_TEMP.get(userid)
-        is_over = await send_all(client, query.from_user.id, files)
-        if is_over == 'done':
-            return await query.answer(f"Hᴇʏ {query.from_user.first_name}, Aʟʟ ғɪʟᴇs ᴏɴ ᴛʜɪs ᴘᴀɢᴇ ʜᴀs ʙᴇᴇɴ sᴇɴᴛ sᴜᴄᴄᴇssғᴜʟʟʏ ᴛᴏ ʏᴏᴜʀ PM !", show_alert=True)
-        elif is_over == 'fal':
-            file_id = "none"
-            return await query.answer(url=f"https://t.me/{temp.U_NAME}?start={userid}_{file_id}")
-        else:
-            return await query.answer(f"Eʀʀᴏʀ: {is_over}", show_alert=True)
-            
-
+        await query.answer("കിട്ടോ.. ഉണ്ടോ.. തരുമോ.അയക്കാമോ. sent. ലിങ്ക്.. Plz. Movie... എന്നിങ്ങനെ ഉള്ള വാക്കുകൾ ഒഴിവാക്കുക. മൂവിയുടെ പേര് വർഷം ഭാഷ. വേറേ ഒന്നും കൂട്ടി എഴുതരുത്.🔍", show_alert=True
         
     elif query.data == "pages":
         await query.answer()
@@ -795,7 +777,6 @@ async def auto_filter(client, msg, spoll=False):
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
     key = f"{message.chat.id}-{message.id}"
-    temp.SEND_ALL_TEMP[key] = files
     if settings['button']:
         btn = [
             [
@@ -904,8 +885,9 @@ async def advantage_spell_chok(msg):
     spl = f"<b>❝ 𝖧𝖾𝗒 : {msg.from_user.mention} 𝗌𝗈𝗆𝖾𝗍𝗁𝗂𝗇𝗀 𝖨𝗌 𝖶𝗋𝗈𝗇𝗀 ❞ \n\n➪ 𝖢𝗈𝗋𝗋𝖾𝖼𝗍 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 𝖮𝖿 𝖬𝗈𝗏𝗂𝖾 𝖢𝗁𝖾𝖼𝗄 𝖢𝗈𝗋𝗋𝖾𝖼𝗍 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀 (𝗀𝗈𝗈𝗀𝗅𝖾) 𝖡𝗎𝗍𝗍𝗈𝗇 𝖡𝖾𝗅𝗈𝗐 𝖶𝗂𝗅𝗅 𝖧𝖾𝗅𝗉 𝖸𝗈𝗎..𓁉\n\n➪ 𝖲𝖾𝗅𝖾𝖼𝗍 𝖸𝗈𝗎𝗋 𝖫𝖺𝗇𝗀𝖺𝗎𝗀𝖾 𝖥𝗋𝗈𝗆 𝖳𝗁𝖾 𝖫𝗂𝗌𝗍 𝖡𝖾𝗅𝗈𝗐 𝖳𝗈 𝖬𝗈𝗋𝖾 𝖧𝖾𝗅𝗉..☃︎</b>"        
     message = msg
     mv_rqst = msg.text
-    search = msg.text.replace(" ", "+")
+    search = msg.text.replace(" ", "+")      
     btn = [[
+        InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
         InlineKeyboardButton(
             text="📢 Search in Google 📢",
             url=f"https://google.com/search?q={search}"
