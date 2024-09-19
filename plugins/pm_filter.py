@@ -728,7 +728,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "spl":
-        search = msg.text.replace(" ", "+")      
+        message = msg
+        mv_rqst = msg.text
+        search = msg.text.replace(" ", "+")            
         buttons = [[
             InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
             InlineKeyboardButton('Rules', callback_data='rules'),
@@ -745,7 +747,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             url=f"https://google.com/search?q={search}"
          )
         await query.message.edit_text(
-            text=script.TELG_TXT.format(query.from_user.mention),
+            text=script.SPL_TXT.format(query.from_user.mention),
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
