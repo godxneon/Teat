@@ -26,7 +26,13 @@ logger.setLevel(logging.ERROR)
 
 BUTTONS = {}
 SPELL_CHECK = {}
-                
+
+@Client.on_message(filters.group & filters.text & filters.incoming)
+async def give_filters(client, message):
+    k = await global_filters(client, message)    
+    if k == False:
+        await auto_filter(client, message)    
+        
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
@@ -981,3 +987,72 @@ async def advantage_spell_chok(msg):
     await msg.reply_text(spl, reply_markup=InlineKeyboardMarkup(btn))
     #await msg.delete()
     return   
+
+async def global_filters(client, message, text=False):
+    group_id = message.chat.id
+    name = text or message.text
+    reply_id = message.reply_to_message.id if message.reply_to_message else message.id
+    keywords = await get_gfilters('gfilters')
+    for keyword in reversed(sorted(keywords, key=len)):
+        pattern = r"( |^|[^\w])" + re.escape(keyword) + r"( |$|[^\w])"
+        if re.search(pattern, name, flags=re.IGNORECASE):
+            reply_text, btn, alert, fileid = await find_gfilter('gfilters', keyword)
+
+            if reply_text:
+                reply_text = reply_text.replace("\\n", "\n").replace("\\t", "\t")
+
+            if btn is not None:
+                try:
+                    if fileid == "None":
+                        if btn == "[]":
+                            knd3 = await client.send_message(
+                                group_id, 
+                                reply_text, 
+                                disable_web_page_preview=True,
+                                reply_to_message_id=reply_id
+                            )
+                            await asyncio.sleep()
+                            await knd3.delete()
+                            await message.delete()
+
+                        else:
+                            button = eval(btn)
+                            knd2 = await client.send_message(
+                                group_id,
+                                reply_text,
+                                disable_web_page_preview=True,
+                                reply_markup=InlineKeyboardMarkup(button),
+                                reply_to_message_id=reply_id
+                            )
+                            await asyncio.sleep()
+                            await knd2.delete()
+                            await message.delete()
+
+                    elif btn == "[]":
+                        knd1 = await client.send_cached_media(
+                            group_id,
+                            fileid,
+                            caption=reply_text or "",
+                            reply_to_message_id=reply_id
+                        )
+                        await asyncio.sleep()
+                        await knd1.delete()
+                        await message.delete()
+
+                    else:
+                        button = eval(btn)
+                        knd = await message.reply_cached_media(
+                            fileid,
+                            caption=reply_text or "",
+                            reply_markup=InlineKeyboardMarkup(button),
+                            reply_to_message_id=reply_id
+                        )
+                        await asyncio.sleep()
+                        await knd.delete()
+                        await message.delete()
+
+                except Exception as e:
+                    logger.exception(e)
+                break
+    else:
+        return False
