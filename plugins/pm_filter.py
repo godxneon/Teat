@@ -724,7 +724,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "tel":
         buttons = [[
             InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
-            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='advantage_spell_chok')
         ]]        
         await query.message.edit_text(
             text=script.TELG_TXT.format(query.from_user.mention),
