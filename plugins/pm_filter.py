@@ -26,14 +26,7 @@ logger.setLevel(logging.ERROR)
 
 BUTTONS = {}
 SPELL_CHECK = {}
-            
-
-@Client.on_message(filters.group & filters.text & filters.incoming)
-async def give_filters(client, message):
-    k = await global_filters(client, message)    
-    if k == False:
-        await auto_filter(client, message)    
-
+                
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
