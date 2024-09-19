@@ -203,6 +203,14 @@ class script(object):
 🔹సినిమాలను అభ్యర్థించేటప్పుడు చిహ్నాలను నివారించండి. [+:;'*!-&.. etc]
 
 🌎 మీ సినిమా వివరాల కోసం దిగువన ఉన్న Google బటన్‌ని ఉపయోగించండి</b>"""
+
+    FORM_TXT = """🥇𝐆𝐨 𝐓𝐨 𝐆𝐨𝐨𝐠𝐥𝐞 𝐂𝐨𝐩𝐲 𝐂𝐨𝐫𝐫𝐞𝐜𝐭 𝐒𝐩𝐞𝐥𝐥𝐢𝐧𝐠 𝐢𝐧 𝐎𝐧𝐥𝐲 𝐄𝐧𝐠𝐥𝐢𝐬𝐡 𝐋𝐞𝐭𝐭𝐞𝐫𝐬 𝐀𝐧𝐝 𝐒𝐞𝐧𝐭 𝐢𝐭  🎯
+
+𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐅𝐨𝐫𝐦𝐚𝐭 :- 
+Movies - Varisu 2023
+Series - Dark S01E01
+
+𝗠𝗼𝗿𝗲 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 :- Click On The Button In Your Language below 🎭"""
        
   
     CUSTOM_FILE_CAPTION = """<b>𝐻𝑒𝑙𝑙𝑜 👋 {mention} 😍
