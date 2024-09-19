@@ -745,7 +745,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
            InlineKeyboardButton(
             text="📢 𝗖𝗼𝗿𝗿𝗲𝗰𝘁 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 (𝗚𝗼𝗼𝗴𝗹𝗲) 📢",
             url=f"https://google.com/search?q={search}"
-         )
+           )
+        ]]
         await query.message.edit_text(
             text=script.SPL_TXT.format(query.from_user.mention),
             reply_markup = InlineKeyboardMarkup(buttons),
