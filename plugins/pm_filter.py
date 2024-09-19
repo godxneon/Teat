@@ -691,7 +691,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "MAL":
+    elif query.data == "mal":
         buttons = [[
             InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
@@ -701,7 +701,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "HIN":
+    elif query.data == "hin":
         buttons = [[
             InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
@@ -711,9 +711,26 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-
-
-
+    elif query.data == "tam":
+        buttons = [[
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
+        ]]        
+        await query.message.edit_text(
+            text=script.RULES_TXT.format(query.from_user.mention),
+            reply_markup = InlineKeyboardMarkup(buttons),
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "tel":
+        buttons = [[
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
+        ]]        
+        await query.message.edit_text(
+            text=script.RULES_TXT.format(query.from_user.mention),
+            reply_markup = InlineKeyboardMarkup(buttons),
+            parse_mode=enums.ParseMode.HTML
+        )
     elif query.data == "stats":
         await query.message.edit_text("ᴡᴀɪᴛ.....")
         buttons = [[
@@ -934,11 +951,16 @@ async def advantage_spell_chok(msg):
     btn = [[
         InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
         InlineKeyboardButton('Rules', callback_data='rules'),
-        InlineKeyboardButton('Format', callback_data='formt'),
+        InlineKeyboardButton('Format', 'formt')
         ],[
-        
+        InlineKeyboardButton('ENG', callback_data='eng'),
+        InlineKeyboardButton('MAL', callback_data='mal'),
+        InlineKeyboardButton('HIN', callback_data='hin'),
+        InlineKeyboardButton('TAM', callback_data='tam'),
+        InlineKeyboardButton('TEL', callback_data='tel'),
+        ],[
         InlineKeyboardButton(
-            text="📢 Search in Google 📢",
+            text="📢 𝗖𝗼𝗿𝗿𝗲𝗰𝘁 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 (𝗚𝗼𝗼𝗴𝗹𝗲) 📢",
             url=f"https://google.com/search?q={search}"
         )
             
