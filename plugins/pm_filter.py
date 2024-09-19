@@ -678,7 +678,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "advantagespellchok":
+    elif query.data == "adsplchek":
         buttons = [[
             InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
         InlineKeyboardButton('Rules', callback_data='rules'),
@@ -743,7 +743,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "tel":
         buttons = [[            
-            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='advantagespellchok')
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='adsplchek')
         ]]        
         await query.message.edit_text(
             text=script.TELG_TXT.format(query.from_user.mention),
