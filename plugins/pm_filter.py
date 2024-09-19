@@ -720,38 +720,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "tel":
         buttons = [[            
-            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='spl')
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='advantage_spell_chok(msg)')
         ]]        
         await query.message.edit_text(
             text=script.TELG_TXT.format(query.from_user.mention),
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "spl":
-        message = msg
-        mv_rqst = msg.text
-        search = msg.text.replace(" ", "+")            
-        buttons = [[
-            InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
-            InlineKeyboardButton('Rules', callback_data='rules'),
-            InlineKeyboardButton('Format', 'formt')
-           ],[
-            InlineKeyboardButton('ENG', callback_data='eng'),
-            InlineKeyboardButton('MAL', callback_data='mal'),
-            InlineKeyboardButton('HIN', callback_data='hin'),
-            InlineKeyboardButton('TAM', callback_data='tam'),
-            InlineKeyboardButton('TEL', callback_data='tel'),
-           ],[
-           InlineKeyboardButton(
-            text="📢 𝗖𝗼𝗿𝗿𝗲𝗰𝘁 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 (𝗚𝗼𝗼𝗴𝗹𝗲) 📢",
-            url=f"https://google.com/search?q={search}"
-           )
-        ]]
-        await query.message.edit_text(
-            text=script.SPL_TXT.format(query.from_user.mention),
-            reply_markup = InlineKeyboardMarkup(buttons),
-            parse_mode=enums.ParseMode.HTML
-        )
+        )   
     elif query.data == "stats":
         await query.message.edit_text("ᴡᴀɪᴛ.....")
         buttons = [[
