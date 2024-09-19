@@ -718,8 +718,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "tel":
-        buttons = [[            
+    elif query.data == "tel"(msg):
+        message = msg
+        mv_rqst = msg.text
+        search = msg.text.replace(" ", "+")
+        buttons = [[ 
+            InlineKeyboardButton("📢 𝗖𝗼𝗿𝗿𝗲𝗰𝘁 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 (𝗚𝗼𝗼𝗴𝗹𝗲) 📢", url=f"https://google.com/search?q={search}"),
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='spling')
         ]]        
         await query.message.edit_text(
