@@ -687,7 +687,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
         ]]        
         await query.message.edit_text(
-            text=script.RULES_TXT.format(query.from_user.mention),
+            text=script.ENG_TXT.format(query.from_user.mention),
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
@@ -697,7 +697,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
         ]]        
         await query.message.edit_text(
-            text=script.RULES_TXT.format(query.from_user.mention),
+            text=script.MALA_TXT.format(query.from_user.mention),
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
@@ -707,7 +707,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
         ]]        
         await query.message.edit_text(
-            text=script.RULES_TXT.format(query.from_user.mention),
+            text=script.HIND_TXT.format(query.from_user.mention),
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
@@ -717,7 +717,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
         ]]        
         await query.message.edit_text(
-            text=script.RULES_TXT.format(query.from_user.mention),
+            text=script.TAM_TXT.format(query.from_user.mention),
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
