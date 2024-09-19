@@ -679,6 +679,29 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "advantage_spell_chok":
+        buttons = [[
+            InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
+        InlineKeyboardButton('Rules', callback_data='rules'),
+        InlineKeyboardButton('Format', 'formt')
+        ],[
+        InlineKeyboardButton('ENG', callback_data='eng'),
+        InlineKeyboardButton('MAL', callback_data='mal'),
+        InlineKeyboardButton('HIN', callback_data='hin'),
+        InlineKeyboardButton('TAM', callback_data='tam'),
+        InlineKeyboardButton('TEL', callback_data='tel'),
+        ],[
+        InlineKeyboardButton(
+            text="📢 𝗖𝗼𝗿𝗿𝗲𝗰𝘁 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 (𝗚𝗼𝗼𝗴𝗹𝗲) 📢",
+            url=f"https://google.com/search?q={search}"
+        )
+            
+    ]]
+        await query.message.edit_text(
+            text=script.ENG_TXT.format(query.from_user.mention),
+            reply_markup = InlineKeyboardMarkup(buttons),
+            parse_mode=enums.ParseMode.HTML
+        )
     elif query.data == "eng":
         buttons = [[
             InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
