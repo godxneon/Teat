@@ -472,7 +472,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(script.MUST_TXT, show_alert=True)
 
     elif query.data == "formt":
-        await query.answer(script.MUST_TXT, show_alert=True)
+        await query.answer(script.FORM_TXT, show_alert=True)
         
     elif query.data == "pages":
         await query.answer()
@@ -681,6 +681,39 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "eng":
+        buttons = [[
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
+        ]]        
+        await query.message.edit_text(
+            text=script.RULES_TXT.format(query.from_user.mention),
+            reply_markup = InlineKeyboardMarkup(buttons),
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "MAL":
+        buttons = [[
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
+        ]]        
+        await query.message.edit_text(
+            text=script.RULES_TXT.format(query.from_user.mention),
+            reply_markup = InlineKeyboardMarkup(buttons),
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "HIN":
+        buttons = [[
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+cFix6RwAWgdkMGNl"),
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='commun')
+        ]]        
+        await query.message.edit_text(
+            text=script.RULES_TXT.format(query.from_user.mention),
+            reply_markup = InlineKeyboardMarkup(buttons),
+            parse_mode=enums.ParseMode.HTML
+        )
+
+
+
     elif query.data == "stats":
         await query.message.edit_text("ᴡᴀɪᴛ.....")
         buttons = [[
@@ -901,6 +934,9 @@ async def advantage_spell_chok(msg):
     btn = [[
         InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
         InlineKeyboardButton('Rules', callback_data='rules'),
+        InlineKeyboardButton('Format', callback_data='formt'),
+        ],[
+        
         InlineKeyboardButton(
             text="📢 Search in Google 📢",
             url=f"https://google.com/search?q={search}"
