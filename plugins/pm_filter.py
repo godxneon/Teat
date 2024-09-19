@@ -470,6 +470,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "mstd":
         await query.answer(script.MUST_TXT, show_alert=True)
+
+    elif query.data == "formt":
+        await query.answer(script.MUST_TXT, show_alert=True)
         
     elif query.data == "pages":
         await query.answer()
