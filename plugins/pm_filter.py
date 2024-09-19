@@ -720,7 +720,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "tel":
         buttons = [[            
-            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='btn')
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='spl')
         ]]        
         await query.message.edit_text(
             text=script.TELG_TXT.format(query.from_user.mention),
