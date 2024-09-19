@@ -672,7 +672,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "advantage_spell_chok":
+    elif query.data == "advantagespellchok":
         buttons = [[
             InlineKeyboardButton('𝗠𝘂𝘀𝘁 𝗥𝗲𝗮𝗱', 'mstd'),
         InlineKeyboardButton('Rules', callback_data='rules'),
@@ -691,7 +691,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
     ]]
         await query.message.edit_text(
-            text=script.ENG_TXT.format(query.from_user.mention),
+            text=script.SPL_TXT.format(query.from_user.mention),
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
@@ -737,7 +737,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "tel":
         buttons = [[            
-            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='')
+            InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data='advantagespellchok')
         ]]        
         await query.message.edit_text(
             text=script.TELG_TXT.format(query.from_user.mention),
