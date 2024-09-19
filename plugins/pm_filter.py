@@ -953,7 +953,7 @@ async def advantage_spell_chok(msg):
         InlineKeyboardButton('MAL', callback_data='mal'),
         InlineKeyboardButton('HIN', callback_data='hin'),
         InlineKeyboardButton('TAM', callback_data='tam'),
-        InlineKeyboardButton('TEL', callback_data='tel'),
+        InlineKeyboardButton('TEL', callback_data='tel')
         ],[
         InlineKeyboardButton(
             text="📢 𝗖𝗼𝗿𝗿𝗲𝗰𝘁 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 (𝗚𝗼𝗼𝗴𝗹𝗲) 📢",
