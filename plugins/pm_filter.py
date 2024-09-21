@@ -749,7 +749,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
             
     ]]
-    await query.message.edit_text(spl, reply_markup=InlineKeyboardMarkup(btn))
+        await query.message.edit_text(spl, reply_markup=InlineKeyboardMarkup(btn))
+                                 
     elif query.data == "stats":
         await query.message.edit_text("ᴡᴀɪᴛ.....")
         buttons = [[
