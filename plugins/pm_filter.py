@@ -149,7 +149,7 @@ async def advantage_spoll_choker(bot, query):
             k = await query.message.edit(script.MVE_NT_FND)    
     
 @Client.on_callback_query()
-async def cb_handler(client: Client, query: CallbackQuery):
+async def cb_handler(client: Client, msg, query: CallbackQuery):
     if query.data == "close_data":
         await query.message.delete()
     elif query.data == "delallconfirm":
