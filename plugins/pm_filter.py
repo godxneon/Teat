@@ -720,7 +720,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data.startswith("tel"):
         _, search = query.data.split("#")
-        buttons = [[             
+        buttons = [[ 
+            InlineKeyboardButton(
+            text="📢 𝗖𝗼𝗿𝗿𝗲𝗰𝘁 𝗦𝗽𝗲𝗹𝗹𝗶𝗻𝗴 (𝗚𝗼𝗼𝗴𝗹𝗲) 📢", url=f"https://google.com/search?q={search}"),            
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data=f'langback#{search}')
         ]]        
         await query.message.edit_text(
