@@ -682,7 +682,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         _, search = query.data.split("#")
         buttons = [[ 
             InlineKeyboardButton(
-            text="Search on Google", url=f"https://google.com/search?q={search}"),            
+            text="𝐒𝐞𝐚𝐫𝐜𝐡 𝐨𝐧 𝐆𝐨𝐨𝐠𝐥𝐞", url=f"https://google.com/search?q={search}"),            
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data=f'langback#{search}')
         ]]     
         await query.message.edit_text(
@@ -694,7 +694,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         _, search = query.data.split("#")
         buttons = [[ 
             InlineKeyboardButton(
-            text="Search on Google", url=f"https://google.com/search?q={search}"),            
+            text="𝐒𝐞𝐚𝐫𝐜𝐡 𝐨𝐧 𝐆𝐨𝐨𝐠𝐥𝐞", url=f"https://google.com/search?q={search}"),            
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data=f'langback#{search}')
         ]]     
         await query.message.edit_text(
@@ -706,7 +706,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         _, search = query.data.split("#")
         buttons = [[ 
             InlineKeyboardButton(
-            text="Search on Google", url=f"https://google.com/search?q={search}"),            
+            text="𝐒𝐞𝐚𝐫𝐜𝐡 𝐨𝐧 𝐆𝐨𝐨𝐠𝐥𝐞", url=f"https://google.com/search?q={search}"),            
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data=f'langback#{search}')
         ]]     
         await query.message.edit_text(
@@ -718,7 +718,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         _, search = query.data.split("#")
         buttons = [[ 
             InlineKeyboardButton(
-            text="Search on Google", url=f"https://google.com/search?q={search}"),            
+            text="𝐒𝐞𝐚𝐫𝐜𝐡 𝐨𝐧 𝐆𝐨𝐨𝐠𝐥𝐞", url=f"https://google.com/search?q={search}"),            
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data=f'langback#{search}')
         ]]            
         await query.message.edit_text(
@@ -730,7 +730,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         _, search = query.data.split("#")
         buttons = [[ 
             InlineKeyboardButton(
-            text="Search on Google", url=f"https://google.com/search?q={search}"),            
+            text="𝐒𝐞𝐚𝐫𝐜𝐡 𝐨𝐧 𝐆𝐨𝐨𝐠𝐥𝐞", url=f"https://google.com/search?q={search}"),            
             InlineKeyboardButton('⬅️ 𝑩𝒂𝒄𝒌', callback_data=f'langback#{search}')
         ]]        
         await query.message.edit_text(
