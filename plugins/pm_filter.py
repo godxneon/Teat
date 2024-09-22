@@ -678,7 +678,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )   
-    elif query.data == "eng":
+    elif query.data.startswith("eng"):
         _, search = query.data.split("#")
         buttons = [[ 
             InlineKeyboardButton(
@@ -690,7 +690,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "mal":
+    elif query.data.startswith("mal"):
         _, search = query.data.split("#")
         buttons = [[ 
             InlineKeyboardButton(
@@ -702,7 +702,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "hin":
+    elif query.data.startswith("hin"):
         _, search = query.data.split("#")
         buttons = [[ 
             InlineKeyboardButton(
@@ -714,7 +714,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons),
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "tam":
+    elif query.data.startswith("tam"):
         _, search = query.data.split("#")
         buttons = [[ 
             InlineKeyboardButton(
